@@ -9,6 +9,9 @@ services:
       - .:/app
     env_file:
       - .env
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/taskflow
+      - SECRET_KEY=dev-secret-change-me
     depends_on:
       db:
         condition: service_healthy
@@ -20,8 +23,9 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: taskflow
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
-      - "5432:5432"   # expuesto para usar alembic local
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
