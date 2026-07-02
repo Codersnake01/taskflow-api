@@ -10,8 +10,8 @@ API profesional de gestión de tareas construida con **FastAPI**, **SQLAlchemy 2
 
 ## Funcionalidades (actuales y próximas)
 
-- ✅ Registro e inicio de sesión con JWT – *en progreso*
-- ✅ CRUD de tareas con paginación y filtros – *en progreso*
+- ⬜ Registro e inicio de sesión con JWT – *en progreso*
+- ⬜ CRUD de tareas con paginación y filtros – *en progreso*
 - ✅ Endpoint de verificación de salud con estado de la base de datos
 - ✅ PostgreSQL asíncrono con SQLAlchemy 2.0
 - ✅ Migraciones con Alembic
@@ -53,6 +53,7 @@ El .env por defecto funciona directamente para desarrollo local con Docker.
 ```bash
 docker-compose up --build
 ```
+La API estará disponible en `http://localhost:8000`.
 
 ### 4. Aplicar las migraciones de la base de datos (dentro del contenedor)
 Abre una segunda terminal mientras Docker está corriendo:
@@ -64,6 +65,7 @@ docker-compose exec web alembic upgrade head
 ```bash
 curl http://localhost:8000/api/v1/health
 ```
+Respuesta esperada: `{"status":"ok","database":"connected"}`
 
 ## Ejecutar tests
 ```bash
@@ -75,7 +77,7 @@ uv run pytest
 ```
 
 ## Estructura del Proyecto
-```bash
+```
 taskflow-api/
 ├── app/
 │   ├── api/v1/endpoints/   # Manejadores de rutas
