@@ -10,8 +10,8 @@ Professional task management API built with **FastAPI**, **SQLAlchemy 2.0** (asy
 
 ## Features (Current & Upcoming)
 
-- ✅ User registration and login (JWT) – *in progress*
-- ✅ CRUD for tasks with pagination and filtering – *in progress*
+- ⬜ User registration and login (JWT) – *in progress*
+- ⬜ CRUD for tasks with pagination and filtering – *in progress*
 - ✅ Health check endpoint with database verification
 - ✅ Asynchronous PostgreSQL with SQLAlchemy 2.0
 - ✅ Alembic migrations
@@ -42,13 +42,14 @@ cd taskflow-api
 ```
 
 ### 2. Configure environment 
-```bash
 Copy the example file and adjust if needed:
+```bash
 cp .env.example .env
-The API will be available at http://localhost:8000.
 ```
+Default .env works out-of-the-box for local development with Docker.
 
 ### 3. Run with Docker
+The API will be available at http://localhost:8000.
 ```bash
 docker-compose up --build
 ```
@@ -62,8 +63,8 @@ docker-compose exec web alembic upgrade head
 ### 5. Verify the health 
 ```bash
 curl http://localhost:8000/api/v1/health
-Expected response: {"status":"ok","database":"connected"}
 ```
+Expected response: `{"status":"ok","database":"connected"}`
 
 ## Running Tests
 ```bash
@@ -75,7 +76,7 @@ uv run pytest
 ```
 
 ## Project Structure
-```bash
+```
 taskflow-api/
 ├── app/
 │   ├── api/v1/endpoints/   # Route handlers
