@@ -141,15 +141,21 @@ async def test_unauthorized_access(client):
     response = await client.get("/api/v1/tasks/")
     assert response.status_code == 401
 
+
 @pytest.mark.anyio
 async def test_get_task_not_found(client):
     # Registrar y obtener token
     await client.post(
         "/api/v1/auth/register",
-        json={"email": "nobody@test.com", "password": "secret123", "full_name": "Nobody"},
+        json={
+            "email": "nobody@test.com",
+            "password": "secret123",
+            "full_name": "Nobody",
+        },
     )
     login_resp = await client.post(
-        "/api/v1/auth/login", data={"username": "nobody@test.com", "password": "secret123"}
+        "/api/v1/auth/login",
+        data={"username": "nobody@test.com", "password": "secret123"},
     )
     token = login_resp.json()["access_token"]
     headers = {"Authorization": f"Bearer {token}"}
