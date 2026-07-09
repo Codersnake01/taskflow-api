@@ -9,8 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    services:
-      # No necesitamos servicio porque usamos SQLite en memoria
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,7 +17,7 @@ jobs:
       - name: Install uv
         run: pip install uv
       - name: Install dependencies
-        run: uv sync --dev
+        run: uv sync
       - name: Lint with ruff
         run: uv run ruff check .
       - name: Type check with mypy
@@ -32,4 +30,3 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage.xml
           fail_ci_if_error: true
-#Este es un comentario de prueba para ver si funciona el commit
