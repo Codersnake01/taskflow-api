@@ -1,6 +1,7 @@
 from pydantic import PostgresDsn
 from pydantic_settings import BaseSettings
 
+
 class Settings(BaseSettings):
     model_config = {
         "env_file": ".env",
@@ -9,5 +10,6 @@ class Settings(BaseSettings):
 
     DATABASE_URL: PostgresDsn
     SECRET_KEY: str
+
 
 settings = Settings()

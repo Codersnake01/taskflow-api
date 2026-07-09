@@ -1,14 +1,18 @@
-import pytest
-from httpx import AsyncClient, ASGITransport
-from app.main import app
-from app.db.session import get_db
 from unittest.mock import AsyncMock
+
+import pytest
+from httpx import ASGITransport, AsyncClient
+
+from app.db.session import get_db
+from app.main import app
+
 
 # Mock de la sesión que simula execute sin error
 async def mock_db():
     session = AsyncMock()
     session.execute = AsyncMock(return_value=None)
     yield session
+
 
 @pytest.mark.anyio
 async def test_health_check():
