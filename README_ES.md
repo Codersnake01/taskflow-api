@@ -11,15 +11,15 @@ API profesional de gestión de tareas construida con **FastAPI**, **SQLAlchemy 2
 
 ## Funcionalidades (actuales y próximas)
 
-- ⬜ Registro e inicio de sesión con JWT – *en progreso*
-- ⬜ CRUD de tareas con paginación y filtros – *en progreso*
+- ✅ Registro e inicio de sesión con JWT – *en progreso*
+- ✅ CRUD de tareas con paginación y filtros – *en progreso*
 - ✅ Endpoint de verificación de salud con estado de la base de datos
 - ✅ PostgreSQL asíncrono con SQLAlchemy 2.0
 - ✅ Migraciones con Alembic
 - ✅ Docker & Docker Compose para desarrollo
-- ⬜ Roles y permisos
-- ⬜ Subida de archivos
-- ⬜ Tareas en segundo plano y notificaciones
+- ✅ Roles y permisos
+- ✅ Subida de archivos
+- ✅ Tareas en segundo plano y notificaciones
 
 ## Tecnologías
 
