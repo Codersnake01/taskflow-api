@@ -11,15 +11,15 @@ Professional task management API built with **FastAPI**, **SQLAlchemy 2.0** (asy
 
 ## Features (Current & Upcoming)
 
-- ⬜ User registration and login (JWT) – *in progress*
-- ⬜ CRUD for tasks with pagination and filtering – *in progress*
+- ✅ User registration and login (JWT) – *in progress*
+- ✅ CRUD for tasks with pagination and filtering – *in progress*
 - ✅ Health check endpoint with database verification
 - ✅ Asynchronous PostgreSQL with SQLAlchemy 2.0
 - ✅ Alembic migrations
 - ✅ Docker & Docker Compose for development
-- ⬜ Role-based permissions
-- ⬜ File uploads
-- ⬜ Background tasks and notifications
+- ✅ Role-based permissions
+- ✅ File uploads
+- ✅ Background tasks and notifications
 
 ## Tech Stack
 
