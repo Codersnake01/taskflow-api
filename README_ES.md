@@ -1,5 +1,6 @@
 # TaskFlow API
 
+[![codecov](https://codecov.io/github/Codersnake01/taskflow-api/graph/badge.svg?token=DFHFKMH3EB)](https://codecov.io/github/Codersnake01/taskflow-api)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.138.1-009688)
 ![License](https://img.shields.io/badge/license-MIT-green)
