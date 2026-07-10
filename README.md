@@ -1,32 +1,40 @@
 # TaskFlow API
 
-[![codecov](https://codecov.io/github/Codersnake01/taskflow-api/graph/badge.svg?token=DFHFKMH3EB)](https://codecov.io/github/Codersnake01/taskflow-api)
+[![codecov](https://codecov.io/gh/Codersnake01/taskflow-api/branch/main/graph/badge.svg)](https://codecov.io/gh/Codersnake01/taskflow-api)
+![CI](https://github.com/Codersnake01/taskflow-api/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.138.1-009688)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Professional task management API built with **FastAPI**, **SQLAlchemy 2.0** (async), **PostgreSQL**, **Docker**, and **JWT authentication** (coming soon).
+Professional task management API built with **FastAPI**, **SQLAlchemy 2.0** (async), **PostgreSQL**, **Docker**, and **JWT authentication**.
 
-> **Status:** Core infrastructure ready – DB connected, health endpoint working, tests passing.
+> **Live Demo:** [https://taskflow-api.onrender.com/docs](https://taskflow-api.onrender.com/docs) — Swagger UI with all endpoints.
 
-## Features (Current & Upcoming)
+## Features
 
-- ✅ User registration and login (JWT) – *in progress*
-- ✅ CRUD for tasks with pagination and filtering – *in progress*
-- ✅ Health check endpoint with database verification
+- ✅ User registration and login with JWT
+- ✅ Full CRUD for tasks (title, description, status, owner)
+- ✅ Pagination, filtering by status, and text search
+- ✅ Permission control (users only see their own tasks)
+- ✅ Health check endpoint with database status
 - ✅ Asynchronous PostgreSQL with SQLAlchemy 2.0
 - ✅ Alembic migrations
-- ✅ Docker & Docker Compose for development
-- ✅ Role-based permissions
-- ✅ File uploads
-- ✅ Background tasks and notifications
+- ✅ Docker & Docker Compose for local development
+- ✅ Automated testing (92% coverage)
+- ✅ CI/CD pipeline (linting, type checking, tests)
+- ✅ Deployed on Render with Supabase PostgreSQL
+- ⬜ Role-based permissions (admin/reader)
+- ⬜ File uploads
+- ⬜ Background tasks and notifications
 
 ## Tech Stack
 
 - **Backend:** Python 3.11+, FastAPI, Uvicorn
 - **Database:** PostgreSQL 15 (local via Docker, production via Supabase)
 - **ORM:** SQLAlchemy 2.0 (async), Alembic
-- **Authentication:** JWT (coming soon)
+- **Authentication:** JWT (passlib, bcrypt)
+- **Cloud:** Render (API), Supabase (PostgreSQL)
+- **CI/CD:** GitHub Actions, Codecov
 - **Testing:** Pytest, HTTPX
 - **DevOps:** Docker, Docker Compose, GitHub Actions (CI/CD)
 
@@ -42,11 +50,11 @@ git clone https://github.com/Codersnake01/taskflow-api.git
 cd taskflow-api
 ```
 
-### 2. Configure environment 
+### 2. Configure environment variables
 Copy the example file and adjust if needed:
 ```bash
 cp .env.example .env
-```
+
 Default .env works out-of-the-box for local development with Docker.
 
 ### 3. Run with Docker
@@ -76,19 +84,37 @@ uv sync
 uv run pytest
 ```
 
+## Code Quality & CI
+
+- **Linting/Formatting:** Ruff
+- **Static Typing:** MyPy
+- **CI Pipeline:** GitHub Actions runs on every push:
+  - `ruff check`
+  - `mypy app`
+  - `pytest` with coverage report
+  - Coverage uploaded to Codecov (badge above)
+
+## Deployment
+
+The API is automatically deployed on [Render](https://render.com) whenever changes are pushed to `main`.  
+The PostgreSQL database is hosted on [Supabase](https://supabase.com).  
+A GitHub Actions cron job pings the health endpoint every 6 hours to prevent cold starts on free tiers.
+
 ## Project Structure
 ```
 taskflow-api/
 ├── app/
-│   ├── api/v1/endpoints/   # Route handlers
-│   ├── core/               # Configuration (Pydantic Settings)
-│   ├── db/                 # Database engine, session, base
-│   └── models/             # SQLAlchemy models
-├── tests/                  # Unit tests
-├── alembic/                # Database migrations
+│ ├── api/v1/endpoints/ # Route handlers (auth, tasks, health)
+│ ├── core/ # Configuration, security (JWT, hashing)
+│ ├── db/ # Async engine, session
+│ ├── models/ # SQLAlchemy models (User, Task)
+│ └── schemas/ # Pydantic schemas
+├── tests/ # Test suite (auth, tasks, health)
+├── alembic/ # Database migrations
+├── .github/workflows/ # CI/CD and keep-alive
 ├── docker-compose.yml
 ├── Dockerfile
-└── README.md
+└── requirements.txt
 ```
 
 ## License
