@@ -106,13 +106,13 @@ Un **keep-alive** de GitHub Actions hace ping al endpoint de salud cada 6 horas 
 taskflow-api/
 ├── app/
 │   ├── api/v1/endpoints/   # Manejadores de rutas (auth, tasks, health)
-│   ├── core/   # Configuración, seguridad (JWT, hashing)
-│   ├── db/   # Motor asíncrono, sesión
-│   ├── models/   # Modelos SQLAlchemy (User, Task)
-│   └── schemas/   # Esquemas Pydantic
-├── tests/   # Suite de tests (auth, tasks, health)
-├── alembic/   # Migraciones de base de datos
-├── .github/workflows/   # CI/CD y keep-alive
+│   ├── core/               # Configuración, seguridad (JWT, hashing)
+│   ├── db/                 # Motor asíncrono, sesión
+│   ├── models/             # Modelos SQLAlchemy (User, Task)
+│   └── schemas/            # Esquemas Pydantic
+├── tests/                  # Suite de tests (auth, tasks, health)
+├── alembic/                # Migraciones de base de datos
+├── .github/workflows/      # CI/CD y keep-alive
 ├── docker-compose.yml
 ├── Dockerfile
 └── requirements.txt
@@ -120,4 +120,4 @@ taskflow-api/
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
