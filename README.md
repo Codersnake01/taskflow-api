@@ -8,7 +8,7 @@
 
 Professional task management API built with **FastAPI**, **SQLAlchemy 2.0** (async), **PostgreSQL**, **Docker**, and **JWT authentication**.
 
-> **Live Demo:** [https://taskflow-api-pe4h.onrender.com](https://taskflow-api-pe4h.onrender.com) — Swagger UI with all endpoints.
+> **Live Demo:** [https://taskflow-api-pe4h.onrender.com/docs](https://taskflow-api-pe4h.onrender.com/docs) — Swagger UI with all endpoints.
 
 ## Features
 
@@ -61,7 +61,7 @@ Default .env works out-of-the-box for local development with Docker.
 ```bash
 docker-compose up --build
 ```
-The API will be available at http://localhost:8000.
+The API will be available at `http://localhost:8000`.
 
 ### 4. Apply database migrations (inside the container)
 Open a second terminal while Docker is running:
@@ -98,20 +98,20 @@ uv run pytest
 
 The API is automatically deployed on [Render](https://render.com) whenever changes are pushed to `main`.  
 The PostgreSQL database is hosted on [Supabase](https://supabase.com).  
-A GitHub Actions cron job pings the health endpoint every 6 hours to prevent cold starts on free tiers.
+A GitHub Actions **keep-alive** cron job pings the health endpoint every 6 hours to prevent cold starts on free tiers.
 
 ## Project Structure
 ```
 taskflow-api/
 ├── app/
-│ ├── api/v1/endpoints/ # Route handlers (auth, tasks, health)
-│ ├── core/ # Configuration, security (JWT, hashing)
-│ ├── db/ # Async engine, session
-│ ├── models/ # SQLAlchemy models (User, Task)
-│ └── schemas/ # Pydantic schemas
-├── tests/ # Test suite (auth, tasks, health)
-├── alembic/ # Database migrations
-├── .github/workflows/ # CI/CD and keep-alive
+│   ├── api/v1/endpoints/   # Route handlers (auth, tasks, health)
+│   ├── core/               # Configuration, security (JWT, hashing)
+│   ├── db/                 # Async engine, session
+│   ├── models/             # SQLAlchemy models (User, Task)
+│   └── schemas/            # Pydantic schemas
+├── tests/                  # Test suite (auth, tasks, health)
+├── alembic/                # Database migrations
+├── .github/workflows/      # CI/CD and keep-alive
 ├── docker-compose.yml
 ├── Dockerfile
 └── requirements.txt
