@@ -3,16 +3,11 @@ name: Keep-Alive
 on:
   schedule:
     - cron: "0 */6 * * *"  # Cada 6 horas
-  workflow_dispatch:         # Para ejecutarlo manualmente
+  workflow_dispatch:         # Permite ejecutarlo manualmente
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Render API
-        run: curl -s -o /dev/null -w "%{http_code}" https://taskflow-api-pe4h.onrender.com
-      - name: Ping Supabase (opcional)
-        run: |
-          # Solo para mantener activa la BD, opcional.
-          # No es necesario porque Render ya la usa.
-          echo "Supabase se mantiene activa con el tráfico de Render."
+        run: curl -s -o /dev/null -w "%{http_code}" https://taskflow-api-pe4h.onrender.com/api/v1/health
