@@ -8,7 +8,7 @@
 
 Professional task management API built with **FastAPI**, **SQLAlchemy 2.0** (async), **PostgreSQL**, **Docker**, and **JWT authentication**.
 
-> **Live Demo:** [https://taskflow-api.onrender.com/docs](https://taskflow-api.onrender.com/docs) — Swagger UI with all endpoints.
+> **Live Demo:** [https://taskflow-api-pe4h.onrender.com](https://taskflow-api-pe4h.onrender.com) — Swagger UI with all endpoints.
 
 ## Features
 
@@ -54,14 +54,14 @@ cd taskflow-api
 Copy the example file and adjust if needed:
 ```bash
 cp .env.example .env
-
+```
 Default .env works out-of-the-box for local development with Docker.
 
 ### 3. Run with Docker
-The API will be available at http://localhost:8000.
 ```bash
 docker-compose up --build
 ```
+The API will be available at http://localhost:8000.
 
 ### 4. Apply database migrations (inside the container)
 Open a second terminal while Docker is running:
