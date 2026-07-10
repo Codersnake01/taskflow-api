@@ -101,17 +101,18 @@ La base de datos PostgreSQL está alojada en [Supabase](https://supabase.com).
 Un **keep-alive** de GitHub Actions hace ping al endpoint de salud cada 6 horas para evitar tiempos de arranque en los planes gratuitos.
 
 ## Estructura del proyecto
+
 ```
 taskflow-api/
 ├── app/
-│ ├── api/v1/endpoints/ # Manejadores de rutas (auth, tasks, health)
-│ ├── core/ # Configuración, seguridad (JWT, hashing)
-│ ├── db/ # Motor asíncrono, sesión
-│ ├── models/ # Modelos SQLAlchemy (User, Task)
-│ └── schemas/ # Esquemas Pydantic
-├── tests/ # Suite de tests (auth, tasks, health)
-├── alembic/ # Migraciones de base de datos
-├── .github/workflows/ # CI/CD y keep-alive
+│   ├── api/v1/endpoints/   # Manejadores de rutas (auth, tasks, health)
+│   ├── core/   # Configuración, seguridad (JWT, hashing)
+│   ├── db/   # Motor asíncrono, sesión
+│   ├── models/   # Modelos SQLAlchemy (User, Task)
+│   └── schemas/   # Esquemas Pydantic
+├── tests/   # Suite de tests (auth, tasks, health)
+├── alembic/   # Migraciones de base de datos
+├── .github/workflows/   # CI/CD y keep-alive
 ├── docker-compose.yml
 ├── Dockerfile
 └── requirements.txt
