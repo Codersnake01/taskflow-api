@@ -23,9 +23,6 @@ API profesional de gestión de tareas construida con **FastAPI**, **SQLAlchemy 2
 - ✅ Tests automatizados (cobertura del 92 %)
 - ✅ Pipeline CI/CD (linting, verificación de tipos, tests)
 - ✅ Desplegado en Render con PostgreSQL en Supabase
-- ⬜ Roles y permisos avanzados (admin/lector)
-- ⬜ Subida de archivos
-- ⬜ Tareas en segundo plano y notificaciones
 
 ## Tecnologías
 

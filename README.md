@@ -23,9 +23,6 @@ Professional task management API built with **FastAPI**, **SQLAlchemy 2.0** (asy
 - ✅ Automated testing (92% coverage)
 - ✅ CI/CD pipeline (linting, type checking, tests)
 - ✅ Deployed on Render with Supabase PostgreSQL
-- ⬜ Role-based permissions (admin/reader)
-- ⬜ File uploads
-- ⬜ Background tasks and notifications
 
 ## Tech Stack
 
